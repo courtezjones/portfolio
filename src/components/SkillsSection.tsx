@@ -43,11 +43,11 @@ const skillCategories: SkillCategory[] = [
     accent: 'from-emerald-400 to-green-500',
     glowColor: 'rgba(34, 197, 94, 0.12)',
     skills: [
-      { name: 'C# / .NET', level: 5, context: 'Enterprise ASP.NET — statewide government systems' },
-      { name: 'JavaScript / ECMAScript', level: 5, context: 'Full-stack — from legacy jQuery to modern ES2024' },
-      { name: 'TypeScript', level: 4, context: 'Next.js, React — type-safe architecture' },
-      { name: 'SQL / T-SQL', level: 4, context: 'SQL Server — schema design, migrations, stored procedures' },
+      { name: 'JavaScript / TypeScript', level: 5, context: 'Full-stack - from legacy jQuery to modern Next.js, React' },
+      { name: 'C#', level: 4, context: 'Enterprise ASP.NET (including Dynamics 365 / Power Platform integrations)' },
+      { name: 'SQL', level: 4, context: 'SQL Server - schema design, migrations, stored procedures' },
       { name: 'HTML / CSS', level: 5, context: 'Semantic markup, responsive design, accessibility-first' },
+      { name: 'Python', level: 4, context: 'Data analysis, scripting, automation' },
     ],
   },
   {
@@ -56,10 +56,10 @@ const skillCategories: SkillCategory[] = [
     accent: 'from-cyan-400 to-blue-500',
     glowColor: 'rgba(34, 211, 238, 0.12)',
     skills: [
-      { name: 'ASP.NET (MVC / Web API)', level: 5, context: 'Enterprise apps, government contractor — 4+ years' },
-      { name: 'Next.js', level: 4, context: 'One Drop Video — SSR, API routes, Vercel deployment' },
-      { name: 'React', level: 5, context: 'Portfolio, One Drop, Mini Games — component architecture' },
+      { name: 'Next.js / React', level: 5, context: 'One Drop Video - SSR, API routes, Vercel deployment' },
+      { name: 'ASP.NET', level: 4, context: 'Enterprise apps, government contractor - 4+ years' },
       { name: 'Entity Framework', level: 4, context: 'Database-first & code-first ORM in enterprise systems' },
+      { name: 'Laravel', level: 4, context: 'Legacy PHP app maintenance - security patches, feature additions' },
     ],
   },
   {
@@ -68,10 +68,10 @@ const skillCategories: SkillCategory[] = [
     accent: 'from-blue-500 to-violet-500',
     glowColor: 'rgba(99, 102, 241, 0.12)',
     skills: [
-      { name: 'Motion.js', level: 4, context: 'Portfolio, Mini Games — cinematic scroll animations' },
-      { name: 'React Router', level: 4, context: 'Hybrid routing — scroll anchors + routed pages' },
       { name: 'Tailwind CSS', level: 5, context: 'Utility-first styling across all modern projects' },
-      { name: 'ShadCN / Radix UI', level: 4, context: 'Accessible component primitives' },
+      { name: 'ShadCN / Base UI', level: 5, context: 'Accessible component primitives' },
+      { name: "Dapper", level: 4, context: "Lightweight ORM for high-performance data access in C#" },
+      { name: "Clerk", level: 4, context: "Authentication & user management - OAuth, OpenID Connect" },
     ],
   },
   {
@@ -80,9 +80,9 @@ const skillCategories: SkillCategory[] = [
     accent: 'from-violet-500 to-purple-500',
     glowColor: 'rgba(139, 92, 246, 0.12)',
     skills: [
-      { name: 'Unit Testing', level: 4, context: 'NUnit, xUnit — enterprise C# test suites' },
+      { name: 'Manual QA Collaboration', level: 5, context: 'Cross-team QA - test plans, bug triage, regression' },
+      { name: 'Unit Testing', level: 5, context: 'xUnit, Jest for enterprise test suites' },
       { name: 'Integration Testing', level: 4, context: 'API contract testing, database integration' },
-      { name: 'Manual QA Collaboration', level: 5, context: 'Cross-team QA — test plans, bug triage, regression' },
     ],
   },
   {
@@ -91,10 +91,10 @@ const skillCategories: SkillCategory[] = [
     accent: 'from-amber-400 to-orange-500',
     glowColor: 'rgba(251, 191, 36, 0.12)',
     skills: [
-      { name: 'CI/CD Pipelines', level: 4, context: 'Azure DevOps, GitHub Actions — build + deploy automation' },
-      { name: 'SQL Server Administration', level: 4, context: 'Backups, migrations, performance tuning' },
-      { name: 'Server Environment Setup', level: 4, context: 'Post-ransomware infrastructure rebuild' },
       { name: 'Git / Version Control', level: 5, context: 'Branching strategies, code review, merge workflows' },
+      { name: 'CI/CD Pipelines', level: 4, context: 'Azure DevOps, GitHub Actions, Vercel - build + deploy automation' },
+      { name: 'SQL Server Administration', level: 4, context: 'Backups, migrations, performance tuning' },
+      { name: 'Server Environment Setup', level: 4, context: 'New installations and infrastructure rebuilds' },
     ],
   },
   {
@@ -103,10 +103,10 @@ const skillCategories: SkillCategory[] = [
     accent: 'from-red-400 to-rose-500',
     glowColor: 'rgba(251, 113, 133, 0.12)',
     skills: [
-      { name: 'CompTIA Security+', level: 4, context: 'Certified — threat analysis, risk management' },
-      { name: 'CompTIA Network+', level: 4, context: 'Certified — network architecture, troubleshooting' },
-      { name: 'OAuth / Auth Security', level: 4, context: 'One Drop — encrypted credentials, preemptive refresh' },
-      { name: 'Infrastructure Hardening', level: 4, context: 'Post-incident rebuild — security posture improvement' },
+      { name: 'CompTIA Security+', level: 4, context: 'Certified - threat analysis, risk management' },
+      { name: 'CompTIA Network+', level: 4, context: 'Certified - network architecture, troubleshooting' },
+      { name: 'OAuth / Auth Security', level: 4, context: "Enterprise authentication - OAuth, OpenID Connect, ID.me" },
+      { name: 'Infrastructure Hardening', level: 4, context: 'Server security best practices - patching, access controls, monitoring' },
     ],
   },
 ]
@@ -117,11 +117,10 @@ function ProficiencyBar({ level, accent }: { level: number; accent: string }) {
       {Array.from({ length: 5 }).map((_, i) => (
         <motion.div
           key={i}
-          className={`h-1.5 rounded-full ${
-            i < level
-              ? `bg-linear-to-r ${accent}`
-              : 'bg-slate-700'
-          }`}
+          className={`h-1.5 rounded-full ${i < level
+            ? `bg-linear-to-r ${accent}`
+            : 'bg-slate-700'
+            }`}
           style={{ width: i < level ? '100%' : '100%' }}
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
