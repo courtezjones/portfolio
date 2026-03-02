@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://courtez23.github.io/portfolio_jones",
+  "homepage": "https://tcj-23.github.io/portfolio_jones",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

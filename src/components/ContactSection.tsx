@@ -23,8 +23,8 @@ const contactChannels = [
   },
   {
     label: 'GitHub',
-    value: 'courtez23',
-    href: 'https://github.com/courtez23',
+    value: 'tcj-23',
+    href: 'https://github.com/tcj-23',
     icon: <Github className="w-6 h-6" />,
     description: 'Explore my code and contributions',
     color: 'cyan',
