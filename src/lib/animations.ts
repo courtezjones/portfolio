@@ -215,3 +215,83 @@ export const cardHoverGlow = {
     bounce: 0.2,
   },
 }
+
+// ——————————————————————————————————————
+// About Section animation presets
+// ——————————————————————————————————————
+
+/** Timeline card entrance — slides up with scale and blur clear */
+export const timelineCardEntrance = {
+  hidden: { opacity: 0, y: 50, scale: 0.92, filter: 'blur(8px)' },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    filter: 'blur(0px)',
+    transition: {
+      default: { type: 'spring' as const, visualDuration: 0.7, bounce: 0.18 },
+      opacity: { duration: 0.5, ease: 'easeOut' as const },
+      filter: { duration: 0.6, ease: 'easeOut' as const },
+    },
+  },
+}
+
+/** Timeline card entrance from left (desktop alternating) */
+export const timelineCardFromLeft = {
+  hidden: { opacity: 0, x: -60, scale: 0.92, filter: 'blur(8px)' },
+  visible: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    filter: 'blur(0px)',
+    transition: {
+      default: { type: 'spring' as const, visualDuration: 0.7, bounce: 0.18 },
+      opacity: { duration: 0.5, ease: 'easeOut' as const },
+      filter: { duration: 0.6, ease: 'easeOut' as const },
+    },
+  },
+}
+
+/** Timeline card entrance from right (desktop alternating) */
+export const timelineCardFromRight = {
+  hidden: { opacity: 0, x: 60, scale: 0.92, filter: 'blur(8px)' },
+  visible: {
+    opacity: 1,
+    x: 0,
+    scale: 1,
+    filter: 'blur(0px)',
+    transition: {
+      default: { type: 'spring' as const, visualDuration: 0.7, bounce: 0.18 },
+      opacity: { duration: 0.5, ease: 'easeOut' as const },
+      filter: { duration: 0.6, ease: 'easeOut' as const },
+    },
+  },
+}
+
+/** Narrative section entrance — gentle float up with opacity */
+export const narrativeEntrance = {
+  hidden: { opacity: 0, y: 40, filter: 'blur(6px)' },
+  visible: {
+    opacity: 1,
+    y: 0,
+    filter: 'blur(0px)',
+    transition: {
+      default: { type: 'spring' as const, visualDuration: 0.8, bounce: 0.1 },
+      opacity: { duration: 0.7, ease: 'easeOut' as const },
+      filter: { duration: 0.6, ease: 'easeOut' as const },
+    },
+  },
+}
+
+/** Stagger container for about section — slower cadence for dramatic feel */
+export const aboutStaggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      when: 'beforeChildren' as const,
+      staggerChildren: 0.2,
+      delayChildren: 0.15,
+    },
+  },
+}
