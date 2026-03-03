@@ -6,6 +6,7 @@ import {
   type MotionValue,
 } from "motion/react";
 import ParticleNetwork from "./ParticleNetwork";
+import { Button } from "./ui/button";
 
 /**
  * HeroSection — Cinematic Scrollytelling
@@ -256,6 +257,11 @@ export default function HeroSection() {
     [1, 1, 0],
   );
 
+  const boxStyle = {
+    filter:
+      "drop-shadow(0 1px 5px var(--primary-foreground)) drop-shadow(0 5px 10px var(--primary))",
+  };
+
   return (
     <section ref={containerRef} className="relative h-[200vh]">
       {/* Sticky viewport — stays pinned while scrolling through container */}
@@ -292,14 +298,13 @@ export default function HeroSection() {
               charDelay={0.045}
               startDelay={0.3}
             />
-            
+
             <StaggeredText
               text="Jones"
               className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight"
               charDelay={0.045}
               startDelay={0.5}
             />
-            
           </h1>
 
           {/* Phase 2: Role — scroll-triggered reveal */}
@@ -344,14 +349,14 @@ export default function HeroSection() {
             enterAt={[0.2, 0.55]}
           >
             <a
-              href="#projects"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg font-semibold text-primary-foreground transition-all duration-300 hover:shadow-lg hover:scale-105 active:scale-[0.98]"
-              style={{
-                background: "var(--hero-node)",
-                boxShadow: "0 0 30px var(--hero-glow)",
-              }}
+              href="/#projects"
             >
-              Explore My Work
+              <Button
+                size="lg"
+                style={boxStyle}
+              >
+                Explore My Work
+              </Button>
             </a>
           </ScrollRevealLine>
         </motion.div>
