@@ -321,7 +321,7 @@ function SkillCard({ category }: { category: SkillCategory }) {
                     level={skill.level}
                     accent={category.accent}
                   />
-                  <p className="text-xs text-slate-500 leading-relaxed">
+                  <p className="text-xs leading-relaxed">
                     {skill.context}
                   </p>
                 </div>
