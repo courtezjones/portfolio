@@ -228,25 +228,6 @@ export default function ContactSection() {
           }}
           className="text-center"
         >
-          <motion.a
-            href="mailto:courtezj23@gmail.com"
-            whileHover={{
-              scale: 1.04,
-              boxShadow:
-                "0 0 50px rgba(34, 197, 94, 0.25), 0 0 100px rgba(34, 197, 94, 0.1)",
-            }}
-            whileTap={{ scale: 0.97 }}
-            transition={{
-              type: "spring",
-              visualDuration: 0.3,
-              bounce: 0.3,
-            }}
-            className="inline-flex items-center gap-2.5 px-7 sm:px-8 py-3.5 sm:py-4 rounded-xl bg-emerald-500 text-slate-900 font-bold text-sm sm:text-base hover:bg-emerald-400 transition-colors cursor-pointer shadow-lg shadow-emerald-500/20"
-          >
-            <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
-            Send Me an Email
-          </motion.a>
-
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
