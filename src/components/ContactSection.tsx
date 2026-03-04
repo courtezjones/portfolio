@@ -127,11 +127,9 @@ export default function ContactSection() {
         >
           <motion.h2
             variants={staggerChildFadeUp}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6"
           >
-            <span className="bg-linear-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">
-              Let's Work
-            </span>
+            <span className="header-text">Let's Work</span>
             <br />
             <span>Together</span>
           </motion.h2>
