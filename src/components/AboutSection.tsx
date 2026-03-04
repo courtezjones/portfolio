@@ -33,7 +33,7 @@ const milestones: TimelineMilestone[] = [
     title: "Foundation & Community",
     description:
       "Participated in a college-affiliated apprenticeship building full-stack applications for local organizations and introducing elementary students to programming. Real-world projects, real community impact.",
-    icon: <Code2 className="w-4 h-4" />,
+    icon: <Code2 className="w-4 h-4 text-background" />,
     accent: "from-emerald-400 to-cyan-400",
   },
   {
@@ -41,23 +41,23 @@ const milestones: TimelineMilestone[] = [
     title: "Enterprise & Leadership",
     description:
       "Lead Software Engineer and government contractor supporting statewide enterprise applications. Led front-end initiatives, designed database schemas, built CI/CD pipelines, onboarded developers, and served as the escalation point for production incidents across systems over a decade old.",
-    icon: <Building2 className="w-4 h-4" />,
+    icon: <Building2 className="w-4 h-4 text-background" />,
     accent: "from-emerald-400 to-cyan-400",
   },
   {
     year: "2024–2025",
     title: "Infrastructure Security",
     description:
-      "Rebuilt the internal infrastructure for a medium-sized company after they experienced a ransomware incident. Modernized server environments, improved operational reliability, and strengthened security posture.",
-    icon: <Shield className="w-4 h-4" />,
+      "Modernized the internal infrastructure for a medium-sized company after they experienced a ransomware incident. Rebuilt server environments, improved operational reliability, and strengthened security posture.",
+    icon: <Shield className="w-4 h-4 text-background" />,
     accent: "from-emerald-400 to-cyan-400",
   },
   {
     year: "2025–Present",
     title: "Building What Lasts",
     description:
-      "Channeling eight years of enterprise depth, security literacy, and systems thinking into architecture that endures. Building scalable platforms and pursuing tools that strengthen communities.",
-    icon: <Rocket className="w-4 h-4" />,
+      "Currently freelancing. In addition, building scalable tools and pursuing projects that strengthen communities.",
+    icon: <Rocket className="w-4 h-4 text-background" />,
     accent: "from-emerald-400 to-cyan-400",
   },
 ];
@@ -76,16 +76,16 @@ function TimelineDot({
   return (
     <motion.div
       variants={timelineNodeEntrance}
-      className="relative z-10 w-7 h-7 md:w-10 md:h-10 rounded-full bg-linear-to-br from-primary to-accent shadow-sm shadow-primary/40 shrink-0 flex items-center justify-center font-semibold"
+      className="relative z-10 w-7 h-7 md:w-10 md:h-10 rounded-full bg-primary shadow-sm shadow-primary/40 shrink-0 flex items-center justify-center font-semibold"
     >
       {icon}
 
       {/* Subtle pulse */}
       <motion.div
-        className="absolute inset-0 rounded-full bg-primary/40"
+        className="absolute inset-0 rounded-full bg-chart-4/60"
         animate={{
-          scale: [1.1, 1.4, 1.1],
-          opacity: [0, 0.7, 0],
+          scale: [1.1, 1.2, 1.1, 1.2],
+          opacity: [0.2, 0.2, 0.2, 0.2],
         }}
         transition={{
           duration: 3,
@@ -178,7 +178,7 @@ function MilestoneContent({
       `}
     >
       <span
-        className={`inline-block text-xs md:text-sm font-mono font-semibold tracking-wider bg-linear-to-r ${milestone.accent} bg-clip-text text-transparent mb-2`}
+        className={`inline-block text-xs md:text-sm font-mono font-semibold tracking-wider mb-2 header-text`}
       >
         {milestone.year}
       </span>
@@ -222,17 +222,17 @@ function ScrollProgressLine({
       `}
     >
       {/* Background rail */}
-      <div className="absolute inset-0 bg-muted" />
+      <div className="absolute inset-0 bg-foreground/20 dark:bg-muted" />
 
       {/* Animated fill */}
       <motion.div
-        className="absolute top-0 left-0 w-full bg-linear-to-b from-accent via-cyan-400 to-primary origin-top"
+        className="absolute top-0 left-0 w-full bg-linear-to-b from-primary/20 via-primary/40 to-primary origin-top"
         style={{ height }}
       />
 
       {/* Glow */}
       <motion.div
-        className="absolute top-0 left-1/2 -translate-x-1/2 w-0.75 bg-linear-to-b from-accent/50 via-cyan-400 to-primary blur-sm origin-top"
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-0.75 bg-linear-to-b from-primary/10 via-primary/30 to-chart-4/30 blur-sm origin-top"
         style={{ height }}
       />
     </div>
@@ -277,13 +277,12 @@ export default function AboutSection() {
           className="mb-14 md:mb-20 text-center"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">
-            <span className="bg-linear-to-r from-primary to-cyan-400 bg-clip-text text-transparent">
-              The Journey
-            </span>
+            <span className="header-text">The Journey</span>
           </h2>
           <p className="text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-            From disassembling Xbox CD drives out of curiosity to rebuilding
-            statewide infrastructure. Every chapter built on the last.
+            If I were ever able to travel in time, one could only hope to still
+            cherish my memories. Every chapter built on the last and was filled
+            with people who made it worthwhile. I'm eternally grateful.
           </p>
         </motion.div>
 
@@ -312,27 +311,18 @@ export default function AboutSection() {
         >
           <motion.h3
             variants={narrativeEntrance}
-            className="text-xl md:text-2xl font-bold"
+            className="text-xl md:text-2xl font-bold header-text"
           >
-            Outside of work
+            Outside of Work
           </motion.h3>
           <motion.p
             variants={narrativeEntrance}
             className="leading-relaxed text-sm md:text-base"
           >
-            I'm a father, a fitness enthusiast, and someone who grew up watching{" "}
-            <span className="text-primary font-medium">Justice League</span> and{" "}
-            <span className="text-primary font-medium">Naruto</span>. I've
-            always been drawn to stories about strategic thinking, relentless
-            growth, and the will to protect what matters.
-          </motion.p>
-          <motion.p
-            variants={narrativeEntrance}
-            className="leading-relaxed text-sm md:text-base"
-          >
-            The same curiosity that had me fixing consoles at twelve still
-            drives me today. I believe technology should strengthen communities,
-            advance equality, and scale responsibly.
+            I'm a father, a fitness enthusiast, and I know my way around the
+            grill. The same curiosity that had me dissecting Xboxes at sixteen
+            still drives me today. I believe technology should strengthen
+            communities, advance equality, and scale responsibly.
           </motion.p>
         </motion.div>
       </div>
