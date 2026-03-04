@@ -99,6 +99,41 @@ function TimelineDot({
 }
 
 /* ———————————————————————————————————————
+   MilestoneContent — card interior
+   Glassmorphism card with top gradient bar
+   ——————————————————————————————————————— */
+function MilestoneContent({
+  milestone,
+  align,
+}: {
+  milestone: TimelineMilestone;
+  align: "left" | "right";
+}) {
+  return (
+    <div
+      className={`
+        group relative rounded-xl p-5 md:p-6
+        bg-card/70 backdrop-blur-md
+        border border-primary/30 hover:bg-primary/10
+        transition-colors duration-300
+        shadow-xl
+        ${align === "right" ? "md:ml-auto" : ""}
+      `}
+    >
+      <span
+        className={`inline-block text-xs md:text-sm font-mono font-semibold tracking-wider mb-2 header-text`}
+      >
+        {milestone.year}
+      </span>
+      <h3 className="text-lg md:text-xl font-bold mb-2">{milestone.title}</h3>
+      <p className="text-card-foreground leading-relaxed text-sm md:text-base">
+        {milestone.description}
+      </p>
+    </div>
+  );
+}
+
+/* ———————————————————————————————————————
    TimelineCard — individual milestone
    Mobile: content right of the rail
    Desktop: alternates left/right
@@ -152,41 +187,6 @@ function TimelineCard({
       {/* ── Desktop opposite-side spacer ── */}
       <div className="hidden md:block md:flex-1" />
     </motion.div>
-  );
-}
-
-/* ———————————————————————————————————————
-   MilestoneContent — card interior
-   Glassmorphism card with top gradient bar
-   ——————————————————————————————————————— */
-function MilestoneContent({
-  milestone,
-  align,
-}: {
-  milestone: TimelineMilestone;
-  align: "left" | "right";
-}) {
-  return (
-    <div
-      className={`
-        group relative rounded-xl p-5 md:p-6
-        bg-card/70 backdrop-blur-md
-        border border-primary/30 hover:bg-primary/10
-        transition-colors duration-300
-        shadow-xl
-        ${align === "right" ? "md:ml-auto" : ""}
-      `}
-    >
-      <span
-        className={`inline-block text-xs md:text-sm font-mono font-semibold tracking-wider mb-2 header-text`}
-      >
-        {milestone.year}
-      </span>
-      <h3 className="text-lg md:text-xl font-bold mb-2">{milestone.title}</h3>
-      <p className="text-card-foreground leading-relaxed text-sm md:text-base">
-        {milestone.description}
-      </p>
-    </div>
   );
 }
 
@@ -280,9 +280,8 @@ export default function AboutSection() {
             <span className="header-text">The Journey</span>
           </h2>
           <p className="text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
-            If I were ever able to travel in time, one could only hope to still
-            cherish my memories. Every chapter built on the last and was filled
-            with people who made it worthwhile. I'm eternally grateful.
+            From tinkering with hardware to leading enterprise projects, my
+            journey has been driven by curiosity and a passion for building.
           </p>
         </motion.div>
 
@@ -307,13 +306,19 @@ export default function AboutSection() {
           whileInView="visible"
           viewport={{ once: true, margin: "-40px" }}
           variants={aboutStaggerContainer}
-          className="mt-16 md:mt-24 max-w-3xl mx-auto text-center space-y-5 md:space-y-6"
+          className="mt-16 md:mt-24 max-w-3xl mx-auto text-center space-y-5 md:space-y-6
+          group relative rounded-xl p-5 md:p-6
+        bg-card/70 backdrop-blur-md
+        border border-primary/30 hover:bg-primary/10
+        transition-colors duration-300
+        shadow-xl
+          "
         >
           <motion.h3
             variants={narrativeEntrance}
             className="text-xl md:text-2xl font-bold header-text"
           >
-            Outside of Work
+            In My Free Time
           </motion.h3>
           <motion.p
             variants={narrativeEntrance}
