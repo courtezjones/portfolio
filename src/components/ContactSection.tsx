@@ -144,7 +144,7 @@ export default function ContactSection() {
             variants={staggerChildFadeUp}
             className="text-base sm:text-lg max-w-xl mx-auto leading-relaxed px-2"
           >
-            Open to engineering opportunities and system design challenges.
+            I like building things. Reach out for any development or system design opportunities.
           </motion.p>
         </motion.div>
 
