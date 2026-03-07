@@ -12,19 +12,19 @@ import { Mail, Github, Linkedin, ArrowUpRight } from "lucide-react";
 const contactChannels = [
   {
     label: "Email",
-    value: "courtezj23@gmail.com",
-    href: "mailto:courtezj23@gmail.com",
+    value: "courtezjones@yahoo.com",
+    href: "mailto:courtezjones@yahoo.com",
     icon: <Mail className="w-6 h-6" />,
     description: "Best way to reach me directly",
     color: "emerald",
   },
   {
     label: "GitHub",
-    value: "tcj-23",
-    href: "https://github.com/tcj-23",
+    value: "gitcourtez",
+    href: "https://github.com/gitcourtez",
     icon: <Github className="w-6 h-6" />,
     description: "Explore my code and contributions",
-    color: "cyan",
+    color: "purple",
   },
   {
     label: "LinkedIn",
@@ -46,11 +46,11 @@ const channelColors: Record<
     glow: "0 0 40px rgba(34, 197, 94, 0.12)",
     iconBg: "bg-emerald-500/10 text-emerald-400",
   },
-  cyan: {
-    border: "hover:border-cyan-500/40",
-    bg: "hover:bg-cyan-500/[0.04]",
-    glow: "0 0 40px rgba(6, 182, 212, 0.12)",
-    iconBg: "bg-cyan-500/10 text-cyan-400",
+  purple: {
+    border: "hover:border-purple-500/40",
+    bg: "hover:bg-purple-500/[0.04]",
+    glow: "0 0 40px rgba(128, 90, 213, 0.12)",
+    iconBg: "bg-purple-500/10 text-purple-400",
   },
   blue: {
     border: "hover:border-blue-500/40",
@@ -234,7 +234,7 @@ export default function ContactSection() {
             transition={{ duration: 0.6, delay: 0.9 }}
             className="mt-4 sm:mt-5 text-xs sm:text-sm text-slate-500"
           >
-            courtezj23@gmail.com
+            courtezjones@yahoo.com
           </motion.p>
         </motion.div>
       </div>
