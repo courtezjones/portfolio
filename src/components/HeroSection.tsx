@@ -318,7 +318,7 @@ export default function HeroSection() {
               className="text-xl sm:text-2xl md:text-3xl font-bold tracking-wide header-text"
               // style={{ color: "var(--chart-2)" }}
             >
-              Senior Software Engineer &amp; Systems Analyst
+              Software Engineer &amp; Systems Analyst
             </p>
           </ScrollRevealLine>
 
